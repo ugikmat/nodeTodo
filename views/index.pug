@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  ul.list-group
+    each todo, i in todos
+      if !todo.finish
+        li.list-group-item
+          a(href='/todos/'+todo._id)=todo.title
+    hr
+    p #{finish}
+    ul.list-group
+      each todo, i in todos
+        if todo.finish
+          li.list-group-item
+            a(href='/todos/'+todo._id)=todo.title
