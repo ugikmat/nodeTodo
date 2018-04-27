@@ -27,6 +27,7 @@ db.on('error',function(err){
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var todosRouter = require('./routes/todos');
 
 var app = express();
 
@@ -71,6 +72,7 @@ app.use(expressValidator({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/todos',todosRouter);
 
 //setup bootstrap
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
